@@ -7,18 +7,25 @@ const csv = fs.readFile(file, {
 }, function (error, data) {
   
     if (error) return console.error(error)
-const csvArray = data.split(',');
+const csvArray = data.split('\n');
 function getHeaders(arr) {
-    let headers = []
-    for (let i = 0; i < 9; i++) {
-headers.push(arr[i])
-console.log(arr[i])
-    }
+    let headers = [arr[0]]
+    headers = headers[0].split(',')
     return headers;
 }
 const headings = getHeaders(csvArray)
+csvArray.shift();
+let json = [];
+const jsonObject = csvArray.forEach((el) => {
+    let counter = 0
+    let splited = el.split(',')
+    let arr = for (let i = 0; i < headings.length; i++) {
+      
+        }
+    obj[counter] = {
 
-console.log(headings[0])
+    }
+})
 });
 
 
